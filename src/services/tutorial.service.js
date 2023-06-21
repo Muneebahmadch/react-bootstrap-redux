@@ -1,12 +1,23 @@
 import http from "../http-common";
+import axios from "axios";
 
 class TutorialDataService{
     getAll(){
-        return http.get("tutorials")
+        console.log('getALL')
+        axios({
+            method: 'get',
+            url:`https://us-central1-supportapp-390409.cloudfunctions.net/tutorialapi/getTutorials`
+        })
+        //return http.get("/getTutorials")
+        
     }
 
     get(id){
-        return http.get(`/tutorials/${id}`)
+        axios({
+            method: 'get',
+            url:`https://us-central1-supportapp-390409.cloudfunctions.net/tutorialapi/getTutorials/${id}`
+        })
+        //return http.get(`/getTutorials/${id}`)
     }
 
     create(data){

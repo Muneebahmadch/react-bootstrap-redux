@@ -26,10 +26,11 @@ import {
   export const retrieveTutorials = () => async (dispatch) => {
     try {
       const res = await TutorialDataService.getAll();
-  
+      console.log('retrieve tutorials')
       dispatch({
         type: RETRIEVE_TUTORIALS,
-        payload: res.data,
+        payload: res,
+        
       });
     } catch (err) {
       console.log(err);

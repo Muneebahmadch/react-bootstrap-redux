@@ -16,6 +16,7 @@ import {
         return [...tutorials, payload];
   
       case RETRIEVE_TUTORIALS:
+        console.log('tutorial reducer')
         return payload;
   
       case UPDATE_TUTORIAL:
